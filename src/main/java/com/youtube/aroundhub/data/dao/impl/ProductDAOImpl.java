@@ -4,7 +4,11 @@ import com.youtube.aroundhub.data.dao.ProductDAO;
 import com.youtube.aroundhub.data.entity.Product;
 import com.youtube.aroundhub.data.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
+@Service
 public class ProductDAOImpl implements ProductDAO {
 
     ProductRepository productRepository;

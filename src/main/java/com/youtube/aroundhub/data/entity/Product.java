@@ -1,6 +1,7 @@
 package com.youtube.aroundhub.data.entity;
 
 
+import com.youtube.aroundhub.data.dto.ProductDto;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -24,6 +25,15 @@ public class Product {
     private int productPrice;
 
     private int productStock;
+
+    public ProductDto toDto() {
+        return ProductDto.builder()
+                .productId(productId)
+                .productName(productName)
+                .productPrice(productPrice)
+                .productStock(productStock)
+                .build();
+    }
 
 
 }
