@@ -8,4 +8,5 @@
     - @RequestBody : 객체를 요청받을 때 사용
 3. Swagger 라이브러리 이용 문서 작성
    - http://localhost:8080/swagger-ui/index.html
-
+4. Product 관련 클래스 작성 
+   - Entity,Dto,Service,Repository,Dao,DataHandler
