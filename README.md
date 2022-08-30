@@ -1,7 +1,7 @@
 # SpringBoot-Maven
 
 ### Maven 을 이용한 백엔드 기초 공부
-
+2022-08-30
 1. GetController 작성
     - @RequestParam : URL 창 파라매터
 2. PostController 작성
