@@ -1,5 +1,7 @@
 package com.youtube.aroundhub.Controller;
 
+import com.youtube.aroundhub.common.Constants;
+import com.youtube.aroundhub.common.exception.AroundHubException;
 import com.youtube.aroundhub.data.Service.Impl.ProductServiceImpl;
 import com.youtube.aroundhub.data.Service.ProductService;
 import com.youtube.aroundhub.data.dto.ProductDto;
@@ -48,10 +50,10 @@ public class ProductController {
 
         // if you don't use valid OR you can't use Valid then you have to write this code
         /**
-        if (productDto.getProductId().equals("") || productDto.getProductId().isEmpty()) {
-            LOGGER.error("productId is empty...!");
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(productDto);
-        }
+         if (productDto.getProductId().equals("") || productDto.getProductId().isEmpty()) {
+         LOGGER.error("productId is empty...!");
+         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(productDto);
+         }
          **/
 
         String productId = productDto.getProductId();
@@ -70,5 +72,10 @@ public class ProductController {
     @DeleteMapping("/product/{productId}")
     public ProductDto deleteProduct(@PathVariable String productId) {
         return null;
+    }
+
+    @PostMapping(value = "/product/exception")
+    public void exceptionTest() throws AroundHubException {
+        throw new AroundHubException(Constants.ExceptionClass.PRODUCT, HttpStatus.FORBIDDEN, "접근이 금지되었습니다");
     }
 }

@@ -18,7 +18,7 @@
 2. Validation 유효성 검사
    - 들어오는 데이터에 대해 의도한 형식의 값이 제대로 들어오는지 체크하는 과정
    - 입력받는 클래스에 제약조건 어노테이션을 추가한 다음 컨트롤러에서 @Valid 어노테이션 추가
-3. 예외처리
+3. 자바에서의 예외처리
    - **RunTime : Unchecked Exception**
      - 반드시 예외 처리 필요 
      - 컴파일 단계 (문법적 오류)
@@ -32,3 +32,7 @@
 
 3 - 1.SpringBoot 에서의 예외처리
 - 동일 클래스 내에 @ExceptionHandler(value = Exception.class) 가 있다면  @RestControllerAdvice 붙은 클래스보다 우선순위로 예외 적용
+4. 커스텀 예외처리
+    - Exception 을 상속받은 커스텀 예외 클래스(AroundHubException) 생성
+    - 예외처리 필드 값(Constants 클래스) 생성
+    - 컨트롤러에서 예외처리 
