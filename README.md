@@ -10,3 +10,9 @@
    - http://localhost:8080/swagger-ui/index.html
 4. Product 관련 클래스 작성 
    - Entity,Dto,Service,Repository,Dao,DataHandler
+
+
+2022-09-01
+1. Logger xml 작성 후 로그 확인
+   - logback-spring.xml
+
