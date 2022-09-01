@@ -1,7 +1,7 @@
 # SpringBoot-Maven
 
-### Maven 을 이용한 백엔드 기초 공부
-2022-08-30
+## Maven 을 이용한 백엔드 기초 공부
+### 2022-08-30
 1. GetController 작성
     - @RequestParam : URL 창 파라매터
 2. PostController 작성
@@ -12,9 +12,23 @@
    - Entity,Dto,Service,Repository,Dao,DataHandler
 
 
-2022-09-01
+### 2022-09-01
 1. Logger xml 작성 후 로그 확인
    - logback-spring.xml
 2. Validation 유효성 검사
    - 들어오는 데이터에 대해 의도한 형식의 값이 제대로 들어오는지 체크하는 과정
    - 입력받는 클래스에 제약조건 어노테이션을 추가한 다음 컨트롤러에서 @Valid 어노테이션 추가
+3. 예외처리
+   - **RunTime : Unchecked Exception**
+     - 반드시 예외 처리 필요 
+     - 컴파일 단계 (문법적 오류)
+     - 롤백하지 않음
+     - IOException,SQLException
+   - **그 외 Exception : Checked Exception**
+     - 명시적 처리 강제하지 않음
+     - 실행 중 단계 (잘못된 매개변수(다른값,NULL값...)
+     - 롤백함
+     - NPE,IAE,IndexOUT,SystemE
+
+3 - 1.SpringBoot 에서의 예외처리
+- 동일 클래스 내에 @ExceptionHandler(value = Exception.class) 가 있다면  @RestControllerAdvice 붙은 클래스보다 우선순위로 예외 적용
