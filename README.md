@@ -30,9 +30,44 @@
      - 롤백함
      - NPE,IAE,IndexOUT,SystemE
 
-3 - 1.SpringBoot 에서의 예외처리
-- 동일 클래스 내에 @ExceptionHandler(value = Exception.class) 가 있다면  @RestControllerAdvice 붙은 클래스보다 우선순위로 예외 적용
+3-1.SpringBoot 에서의 예외처리
+- 동일 클래스 내에 @ExceptionHandler(value = Exception.class) 가 있다면 
+@RestControllerAdvice 붙은 클래스보다 우선순위로 예외 적용
+
+
 4. 커스텀 예외처리
     - Exception 을 상속받은 커스텀 예외 클래스(AroundHubException) 생성
     - 예외처리 필드 값(Constants 클래스) 생성
-    - 컨트롤러에서 예외처리 
+    - 컨트롤러에서 예외처리
+    - 
+5. RestTemplate (**rest-template-controller** 참고)
+    - **exchange**
+   
+    ![img.png](img.png)
+   
+- 1. 컨트롤러에 요청 URI 및 Http Method 작성 후 서비스 호출
+    ``` java
+        @GetMapping("/around-hub")
+        public String getArdoundHub(){
+            return restTemplateService.getAroundHub();
+        }
+    ```
+- 2. 서비스에서 요청할 URI 및 경로 작성
+    ``` java
+        public String getAroundHub() {
+        URI uri = UriComponentsBuilder
+                    .fromUriString("http://localhost:9090")
+                    .path("/api/server/around-hub")
+                    .encode()
+                    
+                    .build()
+                    .toUri
+        }
+    ```
+- 3. RestTemplate 객체 생성 및 요청 결과값 자료타입 설정
+    ```java
+        RestTemplate restemplate = new RestTemplate();
+        ResponseEntity<String> responseEntity = restemplate.getForEntity(uri, String.class);
+  
+        return responseEntity.getBody();
+    ```
