@@ -39,7 +39,8 @@
     - Exception 을 상속받은 커스텀 예외 클래스(AroundHubException) 생성
     - 예외처리 필드 값(Constants 클래스) 생성
     - 컨트롤러에서 예외처리
-    - 
+
+### 2022-09-02
 5. RestTemplate (**rest-template-controller** 참고)
     - **exchange**
    
