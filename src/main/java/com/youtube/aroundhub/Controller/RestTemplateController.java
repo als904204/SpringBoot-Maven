@@ -1,5 +1,6 @@
 package com.youtube.aroundhub.Controller;
 
+import com.youtube.aroundhub.Dto.FIFADto;
 import com.youtube.aroundhub.Dto.MemberDto;
 import com.youtube.aroundhub.data.Service.RestTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,4 +45,6 @@ public class RestTemplateController {
     public ResponseEntity<MemberDto> addHeader() {
         return restTemplateService.addHeader();
     }
+
+
 }

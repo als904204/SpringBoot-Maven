@@ -1,11 +1,11 @@
 package com.youtube.aroundhub.data.Service.Impl;
 
+import com.youtube.aroundhub.Dto.FIFADto;
 import com.youtube.aroundhub.Dto.MemberDto;
 import com.youtube.aroundhub.data.Service.RestTemplateService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.RequestEntity;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
@@ -68,7 +68,7 @@ public class RestTemplateServiceImpl implements RestTemplateService {
     public String getName2() {
         URI uri = UriComponentsBuilder
                 .fromUriString("http://localhost:9090")
-                .path("/api/server/path-variable/{name}")
+                .path("/api/server/path-variable/")
                 .encode()
                 .build()
                 .expand("Ronnie") // 복수의 값을 넣어야할 경우 , 사용
@@ -143,4 +143,8 @@ public class RestTemplateServiceImpl implements RestTemplateService {
 
         return responseEntity;
     }
+
+
+
+
 }

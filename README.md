@@ -30,9 +30,9 @@
      - 롤백함
      - NPE,IAE,IndexOUT,SystemE
 
-3-1.SpringBoot 에서의 예외처리
-- 동일 클래스 내에 @ExceptionHandler(value = Exception.class) 가 있다면 
-@RestControllerAdvice 붙은 클래스보다 우선순위로 예외 적용
+    3-1.SpringBoot 에서의 예외처리
+   - 동일 클래스 내에 @ExceptionHandler(value = Exception.class) 가 있다면 
+   @RestControllerAdvice 붙은 클래스보다 우선순위로 예외 적용
 
 
 4. 커스텀 예외처리
@@ -72,3 +72,14 @@
   
         return responseEntity.getBody();
     ```
+  
+### 2022-09-05
+6. JUnit Test 
+    - 통합 테스트란?
+     ![img_5.png](img_5.png)
+    - 단위 테스트란?
+     ![img_6.png](img_6.png)
+   ![img_1.png](img_1.png)
+   ![img_2.png](img_2.png)
+   ![img_3.png](img_3.png)
+   ![img_4.png](img_4.png)

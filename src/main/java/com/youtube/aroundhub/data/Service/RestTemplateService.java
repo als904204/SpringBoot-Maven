@@ -1,5 +1,6 @@
 package com.youtube.aroundhub.data.Service;
 
+import com.youtube.aroundhub.Dto.FIFADto;
 import com.youtube.aroundhub.Dto.MemberDto;
 import org.springframework.http.ResponseEntity;
 
@@ -14,5 +15,6 @@ public interface RestTemplateService {
     public ResponseEntity<MemberDto> postDto();
 
     public ResponseEntity<MemberDto> addHeader();
+
 
 }
